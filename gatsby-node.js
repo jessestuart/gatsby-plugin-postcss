@@ -18,13 +18,22 @@ exports.modifyWebpackConfig = function (_ref, options) {
     });
   }
 
-  var cssFiles = /\.css$/;
+  const dynamicCssFiles = /(components|pages|layouts)\/.*\.css$/;
+  const staticCssFiles = /assets-spa\/css\/.*\.css$/;
 
   switch (stage) {
     case `develop`:
       {
+        config.loader(`staticStyles`, {
+          test: staticCssFiles,
+          loaders: [
+            `style-loader`,
+            `css?modules&importLoaders=1`,
+            `postcss-loader`
+          ]
+        });
         config.loader(`styleModules`, {
-          test: cssFiles,
+          test: dynamicCssFiles,
           loaders: [`style`, cssModulesConfig(stage), `postcss`]
         });
         return config;
@@ -32,25 +41,22 @@ exports.modifyWebpackConfig = function (_ref, options) {
     case `build-css`:
       {
         config.loader(`styleModules`, {
-          test: cssFiles,
+          test: dynamicCssFiles,
           loader: ExtractTextPlugin.extract(`style`, [cssModulesConfig(stage), `postcss`])
         });
+        console.log(`build-css`);
         return config;
       }
     case `develop-html`:
     case `build-html`:
-      {
-        config.loader(`styleModules`, {
-          test: cssFiles,
-          loader: ExtractTextPlugin.extract(`style`, [cssModulesConfig(stage), `postcss`])
-        });
-        return config;
-      }
     case `build-javascript`:
       {
         config.loader(`styleModules`, {
-          test: cssFiles,
-          loader: ExtractTextPlugin.extract(`style`, [cssModulesConfig(stage)])
+          test: dynamicCssFiles,
+          loader: ExtractTextPlugin.extract(`style`, [
+            cssModulesConfig(stage),
+            `postcss`,
+          ]),
         });
         return config;
       }
