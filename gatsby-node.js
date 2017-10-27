@@ -27,9 +27,9 @@ exports.modifyWebpackConfig = function (_ref, options) {
         config.loader(`staticStyles`, {
           test: staticCssFiles,
           loaders: [
-            `style-loader`,
+            `style`,
             `css?modules&importLoaders=1`,
-            `postcss-loader`
+            `postcss`
           ]
         });
         config.loader(`styleModules`, {
