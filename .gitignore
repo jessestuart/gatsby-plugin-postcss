@@ -1,6 +1,6 @@
-.DS_Store
-node_modules
-# Build directory
-.cache/
-public/
 *.log
+.DS_Store
+/.cache/
+/gatsby-node.js
+/node_modules
+/public/
