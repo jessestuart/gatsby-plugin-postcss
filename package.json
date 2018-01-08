@@ -1,7 +1,7 @@
 {
   "name": "@jesses/gatsby-plugin-postcss",
   "description": "Gatsby plugin to handle Postcss syntax.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": [
     "Jesse Stuart <hi@jessestuart.com>",
     "Jared Laser <laserjn@gmail.com>"
@@ -16,7 +16,11 @@
     "babel-cli": "^6.26.0",
     "cross-env": "^5.1.3"
   },
-  "keywords": ["gatsby", "gatsby-plugin", "postcss"],
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "postcss"
+  ],
   "license": "MIT",
   "main": "index.js",
   "readme": "README.md",
