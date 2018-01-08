@@ -1,7 +1,7 @@
 {
   "name": "@jesses/gatsby-plugin-postcss",
   "description": "Gatsby plugin to handle Postcss syntax.",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "author": [
     "Jesse Stuart <hi@jessestuart.com>",
     "Jared Laser <laserjn@gmail.com>"
