@@ -2,6 +2,8 @@
   "name": "@jesses/gatsby-plugin-postcss",
   "description": "Gatsby plugin to handle Postcss syntax.",
   "version": "1.1.2",
+  "homepage": "https://github.com/jessestuart/gatsby-plugin-postcss",
+  "repository": "github:jessestuart/gatsby-plugin-postcss",
   "author": [
     "Jesse Stuart <hi@jessestuart.com>",
     "Jared Laser <laserjn@gmail.com>"
